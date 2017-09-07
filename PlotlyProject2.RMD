@@ -1,0 +1,27 @@
+---
+title: "Project 2 Week 3 Developing Data Products"
+author: "Benjamin Milks"
+date: "March 6, 2017"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Prepping For The Plotly Plot
+
+```{r, warning=FALSE, echo=FALSE}
+library(ggplot2)
+library(plotly)
+head(mtcars)
+cars <- mtcars[,c(1,2,4,6)]
+```
+
+## Slide with Plotly Plot
+
+The size of the dots is proportional to horse power.
+```{r, warning=FALSE, echo=FALSE}
+plot_ly(cars, x = ~wt, y = ~mpg, color = ~cyl, size=~hp)
+```
+
